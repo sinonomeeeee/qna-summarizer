@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>質問のまとめ結果</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .group-card {
+            background-color: white;
+            border-left: 6px solid #007bff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .group-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .representative {
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #007bff;
+            background-color: #eef5ff;
+        }
+        .question-list {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .question-list li {
+            margin-bottom: 5px;
+        }
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .back-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>質問のまとめ結果</h1>
+    {% for group in summary %}
+        <div class="group-card">
+            <div class="group-title">グループ {{ group.cluster }}</div>
+            <div class="representative"><strong>代表質問:</strong> {{ group.representative }}</div>
+            <ul class="question-list">
+                {% for question in group.questions %}
+                    <li>{{ question }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+    <div class="back-link"><a href="/">← 戻る</a></div>
+</body>
+</html>
+

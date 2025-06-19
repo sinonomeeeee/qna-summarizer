@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>講義の質問まとめ機能</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: "Helvetica Neue", sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>講義中の質問まとめ</h1>
+        <form method="post">
+            <textarea name="questions" placeholder="ここに質問を1行ずつ入力してください（Enterで改行）"></textarea><br>
+            <input type="number" name="n_clusters" placeholder="（任意）クラスタ数を指定" min="2">
+            <input type="submit" value="まとめる">
+        </form>
+    </div>
+</body>
+</html>
+
